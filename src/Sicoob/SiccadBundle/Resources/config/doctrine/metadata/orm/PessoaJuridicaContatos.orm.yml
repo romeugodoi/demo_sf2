@@ -1,0 +1,31 @@
+PessoaJuridicaContatos:
+  type: entity
+  table: pessoa_juridica_contatos
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    pessoaJuridica:
+      targetEntity: PessoaJuridica
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        pessoa_juridica_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    contato:
+      targetEntity: Contatos
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        contato_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

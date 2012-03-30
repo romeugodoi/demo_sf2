@@ -1,0 +1,31 @@
+PessoaFisicaContatos:
+  type: entity
+  table: pessoa_fisica_contatos
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    pessoaFisica:
+      targetEntity: PessoaFisica
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        pessoa_fisica_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    contato:
+      targetEntity: Contatos
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        contato_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

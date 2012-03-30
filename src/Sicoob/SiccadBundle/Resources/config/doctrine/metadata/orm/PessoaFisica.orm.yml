@@ -1,0 +1,132 @@
+PessoaFisica:
+  type: entity
+  table: pessoa_fisica
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    sexo:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    dataNascimento:
+      type: date
+      nullable: true
+      column: data_nascimento
+    cpf:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    rg:
+      type: string
+      length: 12
+      fixed: false
+      nullable: true
+    rgVia:
+      type: smallint
+      nullable: true
+      column: rg_via
+    rgOrgaoExpeditor:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: rg_orgao_expeditor
+    rgDataEmissao:
+      type: date
+      nullable: true
+      column: rg_data_emissao
+    rgUfEmissao:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: rg_uf_emissao
+    estadoCivil:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: estado_civil
+    nomePai:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: nome_pai
+    nomeMae:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: nome_mae
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    updatedAt:
+      type: datetime
+      nullable: false
+      column: updated_at
+  oneToOne:
+    user:
+      targetEntity: SfGuardUser
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        user_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    root:
+      targetEntity: PessoaFisica
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        root_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    profissao:
+      targetEntity: Profissoes
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        profissao_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    pessoa:
+      targetEntity: Pessoa
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        pessoa_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    naturalidade:
+      targetEntity: Naturalidades
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        naturalidade_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    nacionalidade:
+      targetEntity: Nacionalidades
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        nacionalidade_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

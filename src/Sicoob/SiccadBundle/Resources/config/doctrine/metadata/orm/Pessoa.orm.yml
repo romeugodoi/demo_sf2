@@ -1,0 +1,46 @@
+Pessoa:
+  type: entity
+  table: pessoa
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    nome:
+      type: string
+      length: 150
+      fixed: false
+      nullable: false
+    apelido:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    email:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    site:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    enviaEmail:
+      type: boolean
+      nullable: false
+      column: envia_email
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    updatedAt:
+      type: datetime
+      nullable: false
+      column: updated_at
+  lifecycleCallbacks: 
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

@@ -1,0 +1,70 @@
+PessoaJuridica:
+  type: entity
+  table: pessoa_juridica
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    razaoSocial:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+      column: razao_social
+    cnpj:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    inscricaoEstadual:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: inscricao_estadual
+    inscricaoMunicipal:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: inscricao_municipal
+    dataAbertura:
+      type: date
+      nullable: true
+      column: data_abertura
+    dataEncerramento:
+      type: date
+      nullable: true
+      column: data_encerramento
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    updatedAt:
+      type: datetime
+      nullable: false
+      column: updated_at
+  oneToOne:
+    pessoa:
+      targetEntity: Pessoa
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        pessoa_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    endereco:
+      targetEntity: Enderecos
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        endereco_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
