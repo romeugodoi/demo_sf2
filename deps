@@ -73,3 +73,4 @@
 [FOSRestBundle]
     git=git://github.com/FriendsOfSymfony/FOSRestBundle.git
     target=bundles/FOS/RestBundle
+    version=origin/0.6

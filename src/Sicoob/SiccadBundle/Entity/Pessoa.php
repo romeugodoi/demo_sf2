@@ -2,6 +2,7 @@
 
 namespace Sicoob\SiccadBundle\Entity;
 
+use Doctrine\Common\Util\Inflector;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -221,5 +222,16 @@ class Pessoa
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+    
+    public function fromArray(array $data)
+    {
+    	foreach ($data as $key => $value) {
+    		$method = 'set' . Inflector::classify($key);
+    
+    		if(method_exists($this, $method)){
+    			call_user_func(array($this, $method), $value);
+    		}
+    	}
     }
 }
