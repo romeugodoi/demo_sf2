@@ -34,8 +34,8 @@ PessoaFisica:
       column: rg_via
     rgOrgaoExpeditor:
       type: string
-      length: null
-      fixed: true
+      length: 255
+      fixed: false
       nullable: true
       column: rg_orgao_expeditor
     rgDataEmissao:
@@ -44,8 +44,8 @@ PessoaFisica:
       column: rg_data_emissao
     rgUfEmissao:
       type: string
-      length: null
-      fixed: true
+      length: 255
+      fixed: false
       nullable: true
       column: rg_uf_emissao
     estadoCivil:

@@ -5,12 +5,12 @@ namespace Sicoob\SiccadBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Sicoob\SiccadBundle\Entity\Contatos
+ * Sicoob\SiccadBundle\Entity\Contato
  *
- * @ORM\Table(name="contatos")
+ * @ORM\Table(name="contato")
  * @ORM\Entity
  */
-class Contatos
+class Contato
 {
     /**
      * @var integer $id
@@ -18,7 +18,7 @@ class Contatos
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="contatos_id_seq", allocationSize="1", initialValue="1")
+     * @ORM\SequenceGenerator(sequenceName="contato_id_seq", allocationSize="1", initialValue="1")
      */
     private $id;
 
@@ -39,7 +39,7 @@ class Contatos
     /**
      * @var string $telefone
      *
-     * @ORM\Column(name="telefone", type="string", nullable=false)
+     * @ORM\Column(name="telefone", type="string", length=255, nullable=false)
      */
     private $telefone;
 

@@ -33,9 +33,9 @@ class PessoaJuridicaContatos
     private $pessoaJuridica;
 
     /**
-     * @var Contatos
+     * @var Contato
      *
-     * @ORM\ManyToOne(targetEntity="Contatos")
+     * @ORM\ManyToOne(targetEntity="Contato")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="contato_id", referencedColumnName="id")
      * })
@@ -43,54 +43,4 @@ class PessoaJuridicaContatos
     private $contato;
 
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set pessoaJuridica
-     *
-     * @param Sicoob\SiccadBundle\Entity\PessoaJuridica $pessoaJuridica
-     */
-    public function setPessoaJuridica(\Sicoob\SiccadBundle\Entity\PessoaJuridica $pessoaJuridica)
-    {
-        $this->pessoaJuridica = $pessoaJuridica;
-    }
-
-    /**
-     * Get pessoaJuridica
-     *
-     * @return Sicoob\SiccadBundle\Entity\PessoaJuridica 
-     */
-    public function getPessoaJuridica()
-    {
-        return $this->pessoaJuridica;
-    }
-
-    /**
-     * Set contato
-     *
-     * @param Sicoob\SiccadBundle\Entity\Contatos $contato
-     */
-    public function setContato(\Sicoob\SiccadBundle\Entity\Contatos $contato)
-    {
-        $this->contato = $contato;
-    }
-
-    /**
-     * Get contato
-     *
-     * @return Sicoob\SiccadBundle\Entity\Contatos 
-     */
-    public function getContato()
-    {
-        return $this->contato;
-    }
 }

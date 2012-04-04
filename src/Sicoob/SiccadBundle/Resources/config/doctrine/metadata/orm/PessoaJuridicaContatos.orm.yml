@@ -20,7 +20,7 @@ PessoaJuridicaContatos:
           referencedColumnName: id
       orphanRemoval: false
     contato:
-      targetEntity: Contatos
+      targetEntity: Contato
       cascade: {  }
       mappedBy: null
       inversedBy: null

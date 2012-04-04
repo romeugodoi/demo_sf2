@@ -60,7 +60,7 @@ class PessoaFisica
     /**
      * @var string $rgOrgaoExpeditor
      *
-     * @ORM\Column(name="rg_orgao_expeditor", type="string", nullable=true)
+     * @ORM\Column(name="rg_orgao_expeditor", type="string", length=255, nullable=true)
      */
     private $rgOrgaoExpeditor;
 
@@ -74,7 +74,7 @@ class PessoaFisica
     /**
      * @var string $rgUfEmissao
      *
-     * @ORM\Column(name="rg_uf_emissao", type="string", nullable=true)
+     * @ORM\Column(name="rg_uf_emissao", type="string", length=255, nullable=true)
      */
     private $rgUfEmissao;
 

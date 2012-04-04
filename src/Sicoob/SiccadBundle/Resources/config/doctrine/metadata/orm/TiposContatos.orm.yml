@@ -1,6 +1,6 @@
-Pessoa:
+TiposContatos:
   type: entity
-  table: pessoa
+  table: tipos_contatos
   fields:
     id:
       id: true
@@ -11,28 +11,14 @@ Pessoa:
         strategy: SEQUENCE
     nome:
       type: string
-      length: 150
+      length: 30
       fixed: false
       nullable: false
-    apelido:
+    descricao:
       type: string
-      length: 50
+      length: 1000
       fixed: false
       nullable: true
-    email:
-      type: string
-      length: 150
-      fixed: false
-      nullable: true
-    site:
-      type: string
-      length: 100
-      fixed: false
-      nullable: true
-    enviaEmail:
-      type: boolean
-      nullable: false
-      column: envia_email
     createdAt:
       type: datetime
       nullable: false

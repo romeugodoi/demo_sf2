@@ -1,6 +1,6 @@
-Pessoa:
+Contato:
   type: entity
-  table: pessoa
+  table: contato
   fields:
     id:
       id: true
@@ -9,30 +9,18 @@ Pessoa:
       nullable: false
       generator:
         strategy: SEQUENCE
-    nome:
+    ddi:
+      type: integer
+      unsigned: false
+      nullable: true
+    ddd:
+      type: smallint
+      nullable: false
+    telefone:
       type: string
-      length: 150
+      length: 255
       fixed: false
       nullable: false
-    apelido:
-      type: string
-      length: 50
-      fixed: false
-      nullable: true
-    email:
-      type: string
-      length: 150
-      fixed: false
-      nullable: true
-    site:
-      type: string
-      length: 100
-      fixed: false
-      nullable: true
-    enviaEmail:
-      type: boolean
-      nullable: false
-      column: envia_email
     createdAt:
       type: datetime
       nullable: false
@@ -41,4 +29,14 @@ Pessoa:
       type: datetime
       nullable: false
       column: updated_at
+  oneToOne:
+    tiposContatos:
+      targetEntity: TiposContatos
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        tipos_contatos_id:
+          referencedColumnName: id
+      orphanRemoval: false
   lifecycleCallbacks: {  }

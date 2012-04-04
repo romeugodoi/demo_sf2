@@ -1,6 +1,6 @@
-Pessoa:
+SfGuardPermission:
   type: entity
-  table: pessoa
+  table: sf_guard_permission
   fields:
     id:
       id: true
@@ -9,30 +9,16 @@ Pessoa:
       nullable: false
       generator:
         strategy: SEQUENCE
-    nome:
+    name:
       type: string
-      length: 150
-      fixed: false
-      nullable: false
-    apelido:
-      type: string
-      length: 50
+      length: 255
       fixed: false
       nullable: true
-    email:
+    description:
       type: string
-      length: 150
+      length: 1000
       fixed: false
       nullable: true
-    site:
-      type: string
-      length: 100
-      fixed: false
-      nullable: true
-    enviaEmail:
-      type: boolean
-      nullable: false
-      column: envia_email
     createdAt:
       type: datetime
       nullable: false
@@ -41,4 +27,19 @@ Pessoa:
       type: datetime
       nullable: false
       column: updated_at
+  manyToMany:
+    group:
+      targetEntity: SfGuardGroup
+      cascade: {  }
+      mappedBy: permission
+      inversedBy: null
+      joinTable: null
+      orderBy: null
+    user:
+      targetEntity: SfGuardUser
+      cascade: {  }
+      mappedBy: permission
+      inversedBy: null
+      joinTable: null
+      orderBy: null
   lifecycleCallbacks: {  }
