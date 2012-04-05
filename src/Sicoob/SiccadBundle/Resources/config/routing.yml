@@ -1,0 +1,4 @@
+pessoas:
+    type:     rest
+    resource: Sicoob\SiccadBundle\Controller\PessoaController
+    name_prefix:  pessoa_

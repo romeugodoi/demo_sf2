@@ -1,7 +1,12 @@
+#SicoobSiccadBundle:
+#    resource: "@SicoobSiccadBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+    
 SicoobSiccadBundle:
-    resource: "@SicoobSiccadBundle/Controller/"
-    type:     annotation
+    resource: "@SicoobSiccadBundle/Resources/config/routing.yml"
     prefix:   /
+    type: rest
 
 # Internal routing configuration to handle ESI
 #_internal:
