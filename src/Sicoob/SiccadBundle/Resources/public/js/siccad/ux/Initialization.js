@@ -24,6 +24,39 @@ Ext.define('Ext.ux.Initialization', {requires: ['Ext.ux.Router', 'Ext.ux.MyUser'
 			if (!view){
 				view = "home.Home";
 			}
+			/**
+			 * --------------------------------------
+			 */
+			
+			var viewport_main = Ext.getCmp('viewport_default');
+			var viewport_layoutappview = Ext.getCmp('layoutappview');
+			if (!viewport_layoutappview){
+				viewport_main.removeAll();
+				viewport_main.add(Ext.widget('layoutappview'));
+				viewport_main.doLayout();
+			}
+			var middle = Ext.getCmp('layoutmiddle');
+			if (middle){
+				middle.removeAll();
+				console.log(middle);
+				
+				// Carrega a Página Principal 
+				/*if (Ext.isString(view)) {
+					view = this.getView(view); 
+				}
+       
+				//if it already exists, remove
+				element = middle.child(view.xtype);
+				if(element){
+					middle.remove(element);
+				}
+				middle.setActive(true,middle.add(view));*/
+				middle.doLayout();                
+			}			
+			
+			/**
+			 * --------------------------------------
+			 *
 			Ext.Ajax.request({
 				url: 'guard.php/usuarios/isLogged',
 				method: 'POST',
@@ -57,7 +90,7 @@ Ext.define('Ext.ux.Initialization', {requires: ['Ext.ux.Router', 'Ext.ux.MyUser'
 							if(element){
 								middle.remove(element);
 							}
-							middle.setActive(true,middle.add(view));*/
+							middle.setActive(true,middle.add(view));*
 							middle.doLayout();                
 						}
 					}else{
@@ -78,7 +111,7 @@ Ext.define('Ext.ux.Initialization', {requires: ['Ext.ux.Router', 'Ext.ux.MyUser'
 							this.onAuthenticationFail(sender);
 					}
 				} 
-			});
+			});*/
 		}
 	});
   

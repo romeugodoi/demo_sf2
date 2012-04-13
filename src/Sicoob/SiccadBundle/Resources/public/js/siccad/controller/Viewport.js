@@ -8,7 +8,7 @@ Ext.define('Siccad.controller.Viewport', {
 		border:0,
 		html: 
 		"<p align='center'>" +
-		"    <img src='images/logo-sencha-sm.png' alt='Logo' />" +
+		"    <img src='bundles/sicoobsiccad/images/logo-sencha-sm.png' alt='Logo' />" +
 		"</p>"
 	},
 	init: function() {

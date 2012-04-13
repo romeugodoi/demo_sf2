@@ -1,0 +1,30 @@
+Estado:
+  type: entity
+  table: estado
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    uf:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    nome:
+      type: string
+      length: 72
+      fixed: false
+      nullable: false
+    createdAt:
+      type: datetime
+      nullable: false
+      column: created_at
+    updatedAt:
+      type: datetime
+      nullable: false
+      column: updated_at
+  lifecycleCallbacks: {  }

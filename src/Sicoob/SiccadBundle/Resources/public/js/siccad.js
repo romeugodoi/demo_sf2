@@ -1,8 +1,10 @@
 Ext.Loader.setConfig({
     enabled: true, 
 	paths: {
-		'Ext': 'ext-4.0.7/src',
-		'Siccad': 'siccad'
+		'Ext'	: 'bundles/sicoobsiccad/js/ext-4.0.7/src',
+		'Siccad': 'bundles/sicoobsiccad/js/siccad',
+		'Ext.ux': 'bundles/sicoobsiccad/js/siccad/ux', 
+		'images': 'bundles/sicoobsiccad/images'
 	}
 });
 
@@ -16,13 +18,10 @@ Ext.require([
 
 Ext.application({
     name: 'Siccad',         //app namespace (from Siccad)
-    appFolder: 'siccad',
+    appFolder: 'bundles/sicoobsiccad/js/siccad',
     models: [],
     controllers: ['Viewport', 'Estado', 'Cidade'],
     autoCreateViewport: true,
-	paths              : {
-		'Ext.ux': 'siccad/ux'
-	},
 	requires           : ['Ext.ux.Initialization'],
 	enableRouter       : true,
 	routes: {
@@ -34,7 +33,7 @@ Ext.application({
     
     launch: function() {
 		Ext.QuickTips.init();
-		//Siccad.app = this;
+		Siccad.app = this;
 
 		var hideMask = function () {
 			Ext.get('loading').remove();

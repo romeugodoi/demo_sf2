@@ -20,16 +20,16 @@ class PessoaController extends Controller
 		$em         = $this->get('doctrine')->getEntityManager();
 		$contacts   = $em->getRepository('SicoobSiccadBundle:Pessoa')->findAll();
 		
-		$view = View::create();
-		$handler = $this->get('fos_rest.view_handler');
+		$data = array(
+			'success' => true, 
+			'data'	  => $contacts, 
+			'message' => ''
+		);
 		
-		if ('html' === $this->getRequest()->getRequestFormat())
-			$view->setData(array('contacts' => $contacts));
-		else
-			$view->setData($contacts);
+		$view = View::create()
+			->setStatusCode(200)
+			->setData($data);
 		
-		//$view->setTemplate('ConnectContactBundle:Contact:getContacts.html.twig');
-		
-		return $view;
+		return $this->get('fos_rest.view_handler')->handle($view);
 	}
 }

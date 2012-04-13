@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Sicoob Núcleo de Sistemas{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+	
+    <style type="text/css">
+
+    #loading-mask{
+        background-color:white;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        z-index:20000;
+    }
+    #loading{
+        height:auto;
+        position:absolute;
+        left:45%;
+        top:40%;
+        padding:2px;
+        z-index:20001;
+    }
+    #loading a {
+        color:#225588;
+    }
+    #loading .loading-indicator{
+        background:white;
+        color:#444;
+        font:bold 13px Helvetica, Arial, sans-serif;
+        height:auto;
+        margin:0;
+        padding:10px;
+    }
+    #loading-msg {
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    </style>
+</head>
+<body class="x-border-layout-ct">
+    <div id="loading-mask" style=""></div>
+    <div id="loading">
+        <div class="loading-indicator">
+            <img src="{{ asset('bundles/sicoobsiccad/images/extanim32.gif') }}" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>Núcleo de Sistemas
+            <br /><span id="loading-msg">Carregando estilos e imagens...</span>
+        </div>
+    </div>
+
+    <div id="viewport">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/sicoobsiccad/js/ext-4.0.7/resources/css/ext-all.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/sicoobsiccad/css/ui-extjs.css') }}"/>
+	    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/sicoobsiccad/css/Ext.ux.MessageBox.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/sicoobsiccad/css/custom.css') }}"/>
+
+		<script type="text/javascript">document.getElementById('loading-msg').innerHTML = 'Carregando API...';</script>
+		<script type="text/javascript" src="{{ asset('bundles/sicoobsiccad/js/ext-4.0.7/ext-dev.js') }}"></script>
+		<script type="text/javascript">document.getElementById('loading-msg').innerHTML = 'Carregando Componentes...';</script>
+		<script type="text/javascript">document.getElementById('loading-msg').innerHTML = 'Inicializando...';</script>
+
+		<!-- App.js contains Ext.App, a simple, re-usable Application component -->
+		<script type="text/javascript" src="{{ asset('bundles/sicoobsiccad/js/siccad.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('bundles/sicoobsiccad/js/siccad/renderer/comborenderer.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('bundles/sicoobsiccad/js/siccad/ux/Ext.ux.MessageBox.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('bundles/sicoobsiccad/js/siccad/ux/Ext.ux.Notification.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('bundles/sicoobsiccad/js/siccad/ux/Ext.ux.plugin.FormEnter.js') }}"></script>
+    </div><!-- end viewport -->
+</body>
+</html>

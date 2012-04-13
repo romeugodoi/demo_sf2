@@ -1,4 +1,10 @@
-pessoas:
+#pessoas:
+#    type:     rest
+#    resource: Sicoob\SiccadBundle\Controller\PessoaController
+#    name_prefix:  pessoas_
+
+estados:
     type:     rest
-    resource: Sicoob\SiccadBundle\Controller\PessoaController
-    name_prefix:  pessoa_
+    resource: Sicoob\SiccadBundle\Controller\EstadoController
+    name_prefix:  estados_
+    
