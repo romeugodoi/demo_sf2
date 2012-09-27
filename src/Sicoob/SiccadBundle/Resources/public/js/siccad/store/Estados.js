@@ -10,19 +10,20 @@ Ext.define('Siccad.store.Estados', {
     }],
     proxy: {
         simpleSortMode: true,
-        type: 'ajax',
-        api: {
-            read: '/siccad.php/estados/fetchAll?json=true',
-            create: '/siccad.php/estados/create?json=true',
-            update: '/siccad.php/estados/edit?json=true',
-            destroy: '/siccad.php/estados/delete?json=true'
-        },
-        actionMethods: {
-            read: 'POST',
-            create: 'POST',
-            update: 'POST',
-            destroy: 'POST'
-        },  
+        type: 'rest',
+        url: '/app_dev.php/estados',
+//        api: {
+//            read: '/app_dev.php/estados',
+//            create: '/siccad.php/estados/create?json=true',
+//            update: '/siccad.php/estados/edit?json=true',
+//            destroy: '/siccad.php/estados/delete?json=true'
+//        },
+//        actionMethods: {
+//            read: 'GET',
+//            create: 'POST',
+//            update: 'PUT',
+//            destroy: 'DELETE'
+//        },  
         reader: {
             type: 'json',
             root: 'data',
